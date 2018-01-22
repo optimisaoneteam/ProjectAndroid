@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ihuichal.proyectoandroid.MainActivity">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp">
+
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="350dp"
+            android:layout_height="300dp"
+            android:text="Esta aplicación tiene como finalidad visibilizar su ubicación actual. Basta con presionar el boton ubicado más abajo, el cual autentifica el lugar y la hora donde haces el registro"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/buttonRegistrar"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:backgroundTint="@android:color/holo_green_dark"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="Registrar Ahora"
+            android:textColor="@android:color/black" />
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
