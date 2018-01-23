@@ -11,6 +11,7 @@ import java.util.List;
  */
 
 public class MacDevice {
+ // metodo que retorna ingeniosamente el mac
 
     public static String getMacAddress() {
         try {
