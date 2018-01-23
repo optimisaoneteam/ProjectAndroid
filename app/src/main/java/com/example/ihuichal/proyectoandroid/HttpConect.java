@@ -1,10 +1,9 @@
 package com.example.ihuichal.proyectoandroid;
+
+import android.content.Context;
 import android.os.AsyncTask;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.Toast;
-import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -12,29 +11,14 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.NetworkInterface;
-import java.util.Collections;
-import java.util.List;
 import java.nio.charset.StandardCharsets;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * Created by foyarzun on 23-01-18.
+ */
 
-
+public class HttpConect {
     String urlParameters  = "id=12&date=21/01/2018&description=23";
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        String Mac = MacDevice.getMacAddress();
-        Toast.makeText(getBaseContext(),Mac,Toast.LENGTH_LONG).show();
-    }
-
-    ///metodo para el boton  de envio que arranca el metodo envia
-    public void envia (View v ){
-        new Envia().execute();
-    }
 
     ///clase que funciona como un metodo que envia la peticion HTTP en un hilo aparte.
     public class Envia extends AsyncTask<Void, String, String> {
@@ -58,7 +42,12 @@ public class MainActivity extends AppCompatActivity {
                 httpURLConnection.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
                 httpURLConnection.setRequestProperty("Host", "asdf");
                 httpURLConnection.setRequestProperty("Content-Length", Integer.toString(postDataLength ));
+
                 httpURLConnection.connect();
+
+
+
+
                 DataOutputStream Salida = new DataOutputStream(httpURLConnection.getOutputStream());
                 //Salida.writeBytes(Json);
                 Salida.write(postData);
@@ -87,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 //httpURLConnection.disconnect();
 
             }
-            return (urlParameters);
+            return ("  ");
         }
 
 
@@ -95,8 +84,13 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             System.out.println(s);
-            Toast.makeText(getBaseContext(),"Enviado al Sevidor",Toast.LENGTH_LONG).show();
+
 
         }
+
+
+
+
     }
+
 }
