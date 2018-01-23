@@ -30,9 +30,11 @@ public class MainActivity extends AppCompatActivity {
         //creo instancia a la clase posicion
         Position position = new Position(getApplicationContext());
 
+        //llamaos al metodo localizacion y lo iniciamos en la clase position
         Location location = position.getLocation();
 
         if(location != null) {
+            //obtenemos los valores desde la clase Position
             double lat = location.getLatitude();
             double lon = location.getLongitude();
             Toast.makeText(getApplicationContext(), "Latitud: " + lat + " \n Longitud: " + lon, Toast.LENGTH_SHORT).show();
