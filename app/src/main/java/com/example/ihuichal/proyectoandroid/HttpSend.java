@@ -24,7 +24,7 @@ public class HttpSend extends AsyncTask<Void,String,String> {
         this.context=context;
     }
 
-    String urlParameters  = "id=12&date=21/01/2018&description=23";
+    String urlParameters  = "id=12&date=23/01/2018&description=23";
         @Override
         protected String doInBackground(Void... voids) {
             HttpURLConnection httpURLConnection = null;
@@ -44,7 +44,6 @@ public class HttpSend extends AsyncTask<Void,String,String> {
                 httpURLConnection.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
                 httpURLConnection.setRequestProperty("Host", "asdf");
                 httpURLConnection.setRequestProperty("Content-Length", Integer.toString(postDataLength ));
-
                 httpURLConnection.connect();
 
 
