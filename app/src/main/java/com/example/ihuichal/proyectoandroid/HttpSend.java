@@ -1,9 +1,7 @@
 package com.example.ihuichal.proyectoandroid;
-
 import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
-
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -17,12 +15,16 @@ import java.nio.charset.StandardCharsets;
  * Created by foyarzun on 23-01-18.
  */
 
-public class HttpConect {
+public class HttpSend extends AsyncTask<Void,String,String> {
+    Context context;
+
+    public HttpSend(Context context){
+
+        super();
+        this.context=context;
+    }
+
     String urlParameters  = "id=12&date=21/01/2018&description=23";
-
-    ///clase que funciona como un metodo que envia la peticion HTTP en un hilo aparte.
-    public class Envia extends AsyncTask<Void, String, String> {
-
         @Override
         protected String doInBackground(Void... voids) {
             HttpURLConnection httpURLConnection = null;
@@ -32,7 +34,7 @@ public class HttpConect {
             int postDataLength = postData.length;
 
             try {
-                URL url = new URL("http://192.168.1.150:8090/api/register");
+                URL url = new URL("http://10.10.7.127:8090/api/register");
                 httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setDoOutput(true);
                 httpURLConnection.setRequestMethod("POST");
@@ -79,18 +81,14 @@ public class HttpConect {
             return ("  ");
         }
 
-
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             System.out.println(s);
-
+           Toast.makeText(context,"Enviado al Sevidor",Toast.LENGTH_SHORT).show();
 
         }
 
 
-
-
-    }
 
 }
