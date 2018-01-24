@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-        ///metodo para que al presionar boton, se envien dattos al servidor
+        ///metodo para que al presionar boton, se envien datos al servidor
      public void sendRegister(View v) {
         //compruebo permiso
         ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},123);
