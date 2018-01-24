@@ -43,7 +43,7 @@ public class HttpSend extends AsyncTask<Void,String,String> {
             byte[] postData = urlParameters.getBytes( StandardCharsets.UTF_8 );
             try {
                 //se esesifica la url y se guarda en la clase url
-                URL url = new URL("http://10.10.7.127:8090/api/register");
+                URL url = new URL("http://10.10.7.105:8090/api/register");
                 // se inserta la url en el  conector
                 httpURLConnection = (HttpURLConnection) url.openConnection();
                 // se setean los headres del http

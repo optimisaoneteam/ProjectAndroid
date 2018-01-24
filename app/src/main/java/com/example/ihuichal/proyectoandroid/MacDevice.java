@@ -6,11 +6,8 @@ import java.net.NetworkInterface;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Created by foyarzun on 23-01-18.
- */
-
 public class MacDevice {
+
  // metodo que retorna ingeniosamente el mac
 
     public static String getMacAddress() {
